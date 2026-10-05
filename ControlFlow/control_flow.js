@@ -47,4 +47,24 @@ console.log("User Caregory:", userCategory);
 
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
-console.log("Authentication Status:", authenticationStatus)
+console.log("Authentication Status:", authenticationStatus);
+
+let role = "Employee";
+let accessStatusDietary;
+switch (role) {
+    case "Employee":
+        accessStatusDietary = "You are authorized to have access to \"Dietary Services\"";
+        break;
+    case "Enrolled Member":
+        accessStatusDietary = "You are authorized to have access to \"Dietary Services\" and one-on-one interaction with dietician";
+        break;
+    case "Subscriber":
+        accessStatusDietary = "You have partial access to facilitate \"Dietary Services\" only";
+        break;
+    case "Non-Subscriber":
+        accessStatusDietary = "You need to enroll or at least subscribe first to avail this facility";
+        break;
+    default:
+        accessStatusDietary = "Unknown role. Access denied";
+}
+console.log("Your access message:", accessStatusDietary);
